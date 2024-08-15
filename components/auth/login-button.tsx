@@ -20,7 +20,7 @@ export const LoginButton: React.FC<LoginButtonProps> = ({
   };
 
   if (mode === "modal") {
-    return <span>TODO; Implement modal</span>;
+    return <span>TODO: Implement modal</span>;
   }
 
   return (
