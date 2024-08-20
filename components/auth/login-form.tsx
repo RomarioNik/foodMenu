@@ -18,12 +18,12 @@ import { CardWrapper } from "@/components/auth/card-wrapper";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
-// import { FormSuccess } from "@/components/form-success";
+import { FormSuccess } from "@/components/form-success";
 import { login } from "@/actions/login";
 
 export const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");
-  // const [success, setSuccess] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
   const searchParams = useSearchParams();
   const urlError =
@@ -41,14 +41,13 @@ export const LoginForm = () => {
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     setError("");
-    // setSuccess("");
+    setSuccess("");
 
     startTransition(() => {
       login(values).then((data) => {
         if (data) {
           setError(data.error);
-          // TODO Add when we add 2FA
-          // setSuccess(data.success);
+          setSuccess(data.success);
         }
       });
     });
@@ -102,7 +101,7 @@ export const LoginForm = () => {
           />
 
           <FormError message={error || urlError} />
-          {/* <FormSuccess message={success} /> */}
+          <FormSuccess message={success} />
 
           <Button className="w-full" type="submit" disabled={isPending}>
             Login
