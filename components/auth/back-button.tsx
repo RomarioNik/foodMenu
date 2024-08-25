@@ -10,7 +10,7 @@ interface BackButtonProps {
 
 export const BackButton: React.FC<BackButtonProps> = ({ label, href }) => {
   return (
-    <Button className="w-full font-normal" size="sm" variant="link" asChild>
+    <Button className="font-normal" size="sm" variant="link" asChild>
       <Link href={href}>{label}</Link>
     </Button>
   );

@@ -36,7 +36,7 @@ export const CardWrapper: React.FC<CardWrapperProps> = ({
           <Social />
         </CardFooter>
       )}
-      <CardFooter>
+      <CardFooter className="flex justify-center">
         <BackButton label={backButtonLabel} href={backButtonHref} />
       </CardFooter>
     </Card>
