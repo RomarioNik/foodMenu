@@ -18,12 +18,6 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
   // create user
   const { name, email, password } = validateFields.data;
 
-  // const existingUser = await db.user.findUnique({
-  //   where: {
-  //     email,
-  //   },
-  // });
-
   const existingUser = await getUserByEmail(email);
 
   if (existingUser) {
