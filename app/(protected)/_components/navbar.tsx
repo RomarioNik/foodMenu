@@ -22,7 +22,7 @@ export const Navbar = () => {
           asChild
           variant={pathName === "/client" ? "default" : "outline"}
         >
-          <Link href="/settings">Client</Link>
+          <Link href="/client">Client</Link>
         </Button>
 
         <Button asChild variant={pathName === "/admin" ? "default" : "outline"}>
